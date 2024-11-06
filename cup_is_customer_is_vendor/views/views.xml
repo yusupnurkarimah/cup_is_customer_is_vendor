@@ -47,15 +47,16 @@
         </record>
 
         <!-- Inherit Search -->
-        <record id="account.res_partner_view_search" model="ir.ui.view">
-            <field name="name">res.partner.search.inherit</field>
+        <record id="res_partner_view_search" model="ir.ui.view">
+            <field name="name">res_partner_view_search</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_res_partner_filter"/>
             <field name="arch" type="xml">
-                <xpath expr="//filter[@name='inactive']" position="before">
+                <xpath expr="//filter[@name='customer']" position="replace">
                     <filter string="Customer Invoices" name="customer" domain="['|',('customer_rank','>', 0),('is_customer','=',True)]"/>
+                </xpath>
+                <xpath expr="//filter[@name='supplier']" position="replace">
                     <filter string="Vendor Bills" name="supplier" domain="['|',('supplier_rank','>', 0),('is_supplier','=',True)]"/>
-                    <separator/>
                 </xpath>
             </field>
         </record>
