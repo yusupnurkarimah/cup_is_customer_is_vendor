@@ -13,7 +13,7 @@
         *   Add Vendor Filter In Purchase Order.
     """,
 
-    'license': "LGPL-3",
+    'license': "OPL-1",
     'images': ['static/description/cupdev2.png'],
     'author': "Yusup Nur Karimah",
     'website': "https://yusupnurkarimah.github.io/",
